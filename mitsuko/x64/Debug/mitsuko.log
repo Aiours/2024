@@ -1,0 +1,4 @@
+﻿  game.c
+F:\visual studio\2024\mitsuko\game.c(33,11): warning C4477: “printf”: 格式字符串“%c”需要类型“int”的参数，但可变参数 1 拥有了类型“char *”
+F:\visual studio\2024\mitsuko\game.c(33,11): warning C4313: "printf": 格式字符串中的 "%c" 与类型为 "char *" 的参数 1 冲突
+  mitsuko.vcxproj -> F:\visual studio\2024\mitsuko\x64\Debug\mitsuko.exe
