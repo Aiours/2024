@@ -60,7 +60,7 @@ void PlayerMove(char board[Row][Col], int row, int col)
 	int y = 0;
 	while (1)
 	{
-		printf("Íæ¼Ò×ß->");
+		printf("çŽ©å®¶èµ°->");
 		scanf("%d %d", &x, &y);
 		if (x > 0 && x <= row && y > 0 && y <= col)
 		{
@@ -70,10 +70,10 @@ void PlayerMove(char board[Row][Col], int row, int col)
 				break;
 			}
 			else
-				printf("×ø±ê±»Õ¼ÓÃ£¬ÇëÖØÐÂÊäÈë\n");
+				printf("åæ ‡è¢«å ç”¨ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 		}
 		else
-			printf("×ø±ê·Ç·¨£¬ÇëÖØÐÂÊäÈë\n");
+			printf("åæ ‡éžæ³•ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 	}
 }
 
@@ -81,7 +81,7 @@ int	IsFull(char board[Row][Col], int row, int col)
 {
 	int i = 0;
 	int j = 0;
-	for (i = 0; i < row ; i++)
+	for (i = 0; i < row - 1; i++)
 	{
 		for (j = 0; j < col; j++)
 		{
@@ -97,7 +97,7 @@ char IsWin(char board[Row][Col], int row, int col)
 	int i = 0;
 	for (i = 0; i < row; i++)
 	{
-		if (board[i][0] == board[i][1] && board[i][2] == board[i][1] && board[i][1] !=' ')
+		if (board[i][0] == board[i][1] && board[i][2] == board[i][1] && board[1][i] !=' ')
 		{
 			return board[i][0];
 		}
@@ -123,15 +123,108 @@ char IsWin(char board[Row][Col], int row, int col)
 
 void ComputerMove(char board[Row][Col], int row, int col)
 {
-	
+	int x = rand() % row;
+	int y = rand() % col;
 	while (1)
 	{
-		int x = rand() % row;
-		int y = rand() % col;
-		if (board[x ][y ] == ' ')
+		if (board[x ][y ] = ' ')
 		{
 			board[x ][y ] = '#';
 			break;
 		}
 	}		
 }
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+
+#define Row 3
+#define Col 3
+
+void menu();
+void game();
+void InitBoard(char board[Row][Col], int row, int col);
+void DisplayBoard(char board[Row][Col], int row, int col);
+void PlayerMove(char board[Row][Col], int row, int col);
+char IsWin(char board[Row][Col], int row, int col);
+void ComputerMove(char board[Row][Col], int row, int col);
+int	IsFull(char board[Row][Col], int row, int col);
+
+
+
+#define _CRT_SECURE_NO_WARNINGS 
+#include "game.h"
+
+void game()
+{
+	char ret = 0;
+	char board[Row][Col];
+	InitBoard(board, Row, Col);
+	DisplayBoard(board, Row, Col);
+	while (1)
+	{
+		PlayerMove(board, Row, Col);
+		ret=IsWin(board, Row, Col);
+		ComputerMove(board, Row, Col);
+		ret=IsWin(board, Row, Col);
+		DisplayBoard(board, Row, Col);
+		if (ret != 'C')
+		{
+			break;
+		}	
+	}
+	if (ret == '*')
+	{
+		printf("çŽ©å®¶èµ¢äº†\n");
+	}
+	if (ret == '#')
+	{
+		printf("ç”µè„‘èµ¢äº†\n");
+	}
+	if (ret == 'Q')
+	{
+		printf("å¹³å±€\n");
+	}
+}
+int main()
+{
+	int input = 0;
+	srand((unsigned int )time(NULL));
+	do
+	{
+		menu();
+		printf("è¯·é€‰æ‹©->");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();
+			break;
+		case 0:
+			break;
+		default:
+			printf("è¯·é‡æ–°é€‰æ‹©->\n");
+		}
+
+	} while (input);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+

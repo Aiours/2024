@@ -11,6 +11,10 @@ void game()
 	{
 		PlayerMove(board, Row, Col);
 		ret=IsWin(board, Row, Col);
+		if (ret != 'C')
+		{
+			break;
+		}
 		ComputerMove(board, Row, Col);
 		ret=IsWin(board, Row, Col);
 		DisplayBoard(board, Row, Col);
