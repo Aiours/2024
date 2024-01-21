@@ -1,0 +1,7 @@
+﻿  game.c
+F:\visual studio\2024\mine_2\game.c(88,19): warning C4028: 形参 1 与声明不同
+F:\visual studio\2024\mine_2\game.c(88,64): warning C4028: 形参 3 与声明不同
+F:\visual studio\2024\mine_2\game.c(89,1): warning C4029: 声明的形参表不同于定义
+F:\visual studio\2024\mine_2\game.c(103,20): warning C4048: “int (*)[9]”和“int (*)[11]”数组的下标不同
+F:\visual studio\2024\mine_2\game.c(125,20): warning C4028: 形参 1 与声明不同
+  mine_2.vcxproj -> F:\visual studio\2024\mine_2\x64\Debug\mine_2.exe
