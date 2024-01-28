@@ -1,0 +1,4 @@
+﻿  game.c
+F:\visual studio\2024\mine_3\game.c(64,44): warning C4028: 形参 2 与声明不同
+F:\visual studio\2024\mine_3\game.c(102): warning C4716: “MineCount”: 必须返回一个值
+  mine_3.vcxproj -> F:\visual studio\2024\mine_3\x64\Debug\mine_3.exe
